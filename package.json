@@ -1,0 +1,24 @@
+{
+  "name": "secp256k1",
+  "version": "1.0.0",
+  "description": "secp256k1",
+  "main": "app.js",
+  "scripts": {
+    "build": "if [ -d ./dist ]; then rm -rf ./dist; fi && tsc",
+    "start": "ts-node ./src/app.ts",
+    "start:prod": "npm run build && node ./dist/app.js"
+  },
+  "keywords": [
+    "secp256k1",
+    "bitcoin",
+    "private to public",
+    "public to address",
+    "private key to WIF",
+    "WIF"
+  ],
+  "author": "Suren Hakhverdyan",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  }
+}
