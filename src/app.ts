@@ -24,7 +24,7 @@ console.log('-------------------------------------------------------------------
 // console.log(`Private Key WIF Uncompressed: ${privateKeyUncompressed}`);
 console.log(`Public Key Uncompressed: ${publicKeyUncompressed}`);
 console.log(`Address Uncompressed: ${addressUncompressed}`);
-console.log('-----------------------------------------------------------------------------------------------------------------------------------------------------------');
+console.log('-----------------------------------------------------------------------------------------');
 // console.log(`Private Key WIF Compressed: ${privateKeyCompressed}`);
 console.log(`Public Key Compressed: ${publicKeyCompressed}`);
 console.log(`Address Compressed: ${addressCompressed}`);
