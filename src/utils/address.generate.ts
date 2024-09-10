@@ -12,5 +12,6 @@ export const addressGenerate = (publicKey: string): string => {
   const networkedHash = Buffer.concat([networkByte, ripemd160Hash]);
   const checksum = sha256(sha256(networkedHash)).slice(0, 4);
   const finalHash = Buffer.concat([networkedHash, checksum]);
+
   return base58Encode(finalHash);
 };

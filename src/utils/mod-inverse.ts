@@ -5,6 +5,7 @@ export const modInverse = (
   if (k < 0n) {
     return p - modInverse(-k, p);
   }
+
   let [s, old_s] = [0n, 1n];
   let [r, old_r] = [p, k];
 

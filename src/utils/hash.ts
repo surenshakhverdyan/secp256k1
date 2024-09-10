@@ -12,6 +12,7 @@ export const base58Encode = (buffer: Buffer): string => {
   const alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
   let encoded = BigInt('0x' + buffer.toString('hex'));
   let output = '';
+
   while (encoded > 0n) {
     const remainder = Number(encoded % 58n);
     encoded = encoded / 58n;
