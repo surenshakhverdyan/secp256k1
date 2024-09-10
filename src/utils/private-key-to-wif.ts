@@ -1,4 +1,4 @@
-import { base58Encode, sha256 } from "./hash";
+import { base58Encode, sha256 } from './hash';
 
 export const privateKeyToWIF = (privateKey: bigint, compressed: boolean): string => {
   const privateKeyHex = privateKey.toString(16);
