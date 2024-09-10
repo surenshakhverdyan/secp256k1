@@ -2,7 +2,7 @@ import {
   sha256,
   ripemd160,
   base58Encode
-} from "./hash";
+} from './hash';
 
 export const addressGenerate = (publicKey: string): string => {
   const buffer = Buffer.from(publicKey, 'hex');
