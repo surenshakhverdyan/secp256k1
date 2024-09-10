@@ -1,7 +1,7 @@
 import { base58Encode, sha256 } from './hash';
 
 export const privateKeyToWIF = (privateKey: bigint, compressed: boolean): string => {
-  const privateKeyHex = privateKey.toString(16);
+  const privateKeyHex = privateKey.toString(16).padStart(64, '0');
   const buffer = Buffer.from(privateKeyHex, 'hex');
   const prefix = Buffer.from([0x80]);
 
