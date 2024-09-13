@@ -11,7 +11,7 @@ export class Point {
     this.y = y;
   }
 
-  toEllipticPoint() {
+  toEllipticPoint(): any {
     return ec.curve.point(this.x.toString(16), this.y.toString(16));
   }
 
