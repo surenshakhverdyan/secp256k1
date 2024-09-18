@@ -12,5 +12,5 @@ export const findPreviousPoint = (
 
   const previousPointElliptic = pQElliptic.add(pRElliptic.neg());
 
-  return Point.fromEllipticPoint(previousPointElliptic);
+  return previousPointElliptic;
 };
