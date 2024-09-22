@@ -10,6 +10,7 @@ const q = {
 };
 
 const kBinary = findPrivateKey(q);
+// @ts-ignore
 const k = BigInt(parseInt(kBinary, 2));
 const Q = scalarMultiplication(k, params.G);
 
