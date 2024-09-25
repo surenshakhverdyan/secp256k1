@@ -5,12 +5,12 @@ import { privateKeyToWIF } from './utils/private-key-to-wif';
 import { findPrivateKey } from './utils/find-private-key';
 
 const q = {
-  x: 0x2F01E5E15CCA351DAFF3843FB70F3C2F0A1BDD05E5AF888A67784EF3E10A2A01n,
-  y: 0x5C4DA8A741539949293D082A132D13B4C2E213D6BA5B7617B5DA2CB76CBDE904n
+  x: 0x3E5AACFC20C77F3A6B24AED45D7CDA7AD889379681EB1C7968AABA1F5E28A78Fn,
+  y: 0x9B1ED65C930A32375FF8C16A2204A5F63FEA35404E5084A720AD1A1A4333E0E3n
 };
 
 const kBinary = findPrivateKey(q);
-const k = BigInt(parseInt(kBinary, 2));
+const k = 0xAn;
 const Q = scalarMultiplication(k, params.G);
 
 const privateKeyUncompressed = privateKeyToWIF(k, false);
