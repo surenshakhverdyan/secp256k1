@@ -4,11 +4,10 @@ import rList from '../../data/r-list.json';
 
 export const findPrivateKey = (
   Q: { x: bigint; y: bigint }
-): number[] | undefined => {
-  let rIndexes: number[] = [];
-  const previousPoints: Point[] = [];
+) => {
+  let previousPoints = [];
 
-  for (let index = rList.length - 1; index >= 0; index--) {
+  for (let index = 0; index < rList.length; index++) {
     const R = {
       x: BigInt(rList[index].x),
       y: BigInt(rList[index].y)
@@ -16,12 +15,12 @@ export const findPrivateKey = (
 
     const previousPoint = findPreviousPoint(Q, R);
     if (previousPoint.x !== null && previousPoint.y !== null) {
-      previousPoints.push(previousPoint);
-    } else {
-      rIndexes.push(index);
-      console.log(rIndexes);
+      previousPoints.push({
+        [index]: {
+          x: Point.fromEllipticPoint(previousPoint).x,
+          y: Point.fromEllipticPoint(previousPoint).y
+        }
+      });
     }
   }
-
-  return rIndexes;
 };

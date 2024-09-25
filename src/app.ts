@@ -9,8 +9,8 @@ const q = {
   y: 0x9B1ED65C930A32375FF8C16A2204A5F63FEA35404E5084A720AD1A1A4333E0E3n
 };
 
-const kBinary = findPrivateKey(q);
-const k = 0xAn;
+findPrivateKey(q);
+const k = 0x000000000000000000000000000000000000000000000000000000000000000An;
 const Q = scalarMultiplication(k, params.G);
 
 const privateKeyUncompressed = privateKeyToWIF(k, false);
