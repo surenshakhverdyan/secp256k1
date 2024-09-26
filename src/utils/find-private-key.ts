@@ -31,4 +31,6 @@ export const findPrivateKey = (
     const currentPoint = findNullPoint(point);
     if (currentPoint) currentPoints.push(point);
   }
+
+  return currentPoints;
 };
