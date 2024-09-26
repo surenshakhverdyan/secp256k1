@@ -1,4 +1,3 @@
-import { params } from './config/params';
 import { scalarMultiplication } from './utils/scalar-multiplication';
 import { addressGenerate } from './utils/address.generate';
 import { privateKeyToWIF } from './utils/private-key-to-wif';
@@ -11,7 +10,7 @@ const q = {
 
 findPrivateKey(q);
 const k = 0x000000000000000000000000000000000000000000000000000000000000000An;
-const Q = scalarMultiplication(k, params.G);
+const Q = scalarMultiplication(k);
 
 const privateKeyUncompressed = privateKeyToWIF(k, false);
 const publicKeyUncompressed = `04${Q.x.toString(16).toUpperCase()}${Q.y.toString(16).toUpperCase()}`;

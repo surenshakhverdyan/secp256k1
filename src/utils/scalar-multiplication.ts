@@ -1,12 +1,12 @@
+import { params } from '../config/params';
 import { pointAddition } from './point-addition';
 import { pointDoubling } from './point-doubling';
 
 export const scalarMultiplication = (
-  d: bigint,
-  G: { x: bigint; y: bigint }
+  d: bigint
 ): { x: bigint; y: bigint } => {
   let Q = { x: 0n, y: 0n };
-  let R = G;
+  let R = params.G;
 
   while (d > 0n) {
     if (d & 1n) {
