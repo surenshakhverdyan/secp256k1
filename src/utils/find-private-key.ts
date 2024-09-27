@@ -5,12 +5,11 @@ import { rList } from '../config/r-list';
 
 export const findPrivateKey = (
   Q: { x: bigint; y: bigint }
-) => {
+): void => {
   let previousPoints = [];
-  let currentPoints = [];
 
   for (let index = 0; index < rList.length; index++) {
-    const R = rList[index]
+    const R = rList[index];
 
     const previousPoint = findPreviousPoint(Q, R);
     if (previousPoint.x !== null && previousPoint.y !== null) {
@@ -28,10 +27,8 @@ export const findPrivateKey = (
     const currentPoint = findNullPoint(point);
 
     if (currentPoint) {
-      currentPoints.push(i);
+      console.log(previousPoints[i]);
       break;
     }
   }
-
-  return currentPoints;
 };
