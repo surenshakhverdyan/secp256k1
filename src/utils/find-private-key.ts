@@ -1,7 +1,7 @@
 import { Point } from './elliptic.class';
 import { findPreviousPoint } from './find-previous-points';
 import { findNullPoint } from './find-null-point';
-import rList from '../../data/r-list.json';
+import { rList } from '../config/r-list';
 
 export const findPrivateKey = (
   Q: { x: bigint; y: bigint }
@@ -10,10 +10,7 @@ export const findPrivateKey = (
   let currentPoints = [];
 
   for (let index = 0; index < rList.length; index++) {
-    const R = {
-      x: BigInt(rList[index].x),
-      y: BigInt(rList[index].y)
-    };
+    const R = rList[index]
 
     const previousPoint = findPreviousPoint(Q, R);
     if (previousPoint.x !== null && previousPoint.y !== null) {
