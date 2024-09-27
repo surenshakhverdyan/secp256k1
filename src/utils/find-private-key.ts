@@ -26,7 +26,11 @@ export const findPrivateKey = (
   for (let i = 0; i < previousPoints.length; i++) {
     const point = previousPoints[i];
     const currentPoint = findNullPoint(point);
-    if (currentPoint) currentPoints.push(point);
+
+    if (currentPoint) {
+      currentPoints.push(i);
+      break;
+    }
   }
 
   return currentPoints;
