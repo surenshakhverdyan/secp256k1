@@ -4,7 +4,7 @@ import { findNullPoint } from './find-null-point';
 import { rList } from '../config/r-list';
 
 export const findPrivateKey = (
-  Q: { x: bigint; y: bigint }
+  Q: { x: bigint; y: bigint; }
 ): void => {
   let previousPoints = [];
 
@@ -14,10 +14,9 @@ export const findPrivateKey = (
     const previousPoint = findPreviousPoint(Q, R);
     if (previousPoint.x !== null && previousPoint.y !== null) {
       previousPoints.push({
-        [index]: {
-          x: Point.fromEllipticPoint(previousPoint).x,
-          y: Point.fromEllipticPoint(previousPoint).y
-        }
+        index,
+        x: Point.fromEllipticPoint(previousPoint).x,
+        y: Point.fromEllipticPoint(previousPoint).y
       });
     }
   }
