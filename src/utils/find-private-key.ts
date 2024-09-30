@@ -13,6 +13,10 @@ export const findPrivateKey = (
 
     const previousPoint = findPreviousPoint(Q, R);
     if (previousPoint.x !== null && previousPoint.y !== null) {
+      if (index === 0) {
+        continue;
+      }
+
       previousPoints.push({
         index,
         x: Point.fromEllipticPoint(previousPoint).x,
@@ -20,4 +24,5 @@ export const findPrivateKey = (
       });
     }
   }
+  console.log(previousPoints.length)
 };
