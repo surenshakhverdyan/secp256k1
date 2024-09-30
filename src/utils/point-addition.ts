@@ -1,20 +1,19 @@
 import { params } from '../config/params';
 import { pointDoubling } from './point-doubling';
 import { modInverse } from './mod-inverse';
+import { IPoint } from '../interfaces/point.interface';
 
 export const pointAddition = (
-  Px: bigint,
-  Py: bigint,
-  Qx: bigint,
-  Qy: bigint
-): { x: bigint; y: bigint } => {
-  if (Px === Qx && Py === Qy) {
-    return pointDoubling(Px, Py);
+  P: IPoint,
+  Q: IPoint,
+): IPoint => {
+  if (P.x === Q.x && P.y === Q.y) {
+    return pointDoubling(P);
   }
 
-  const lambda = (modInverse(Qx - Px, params.p) * (Qy - Py)) % params.p;
-  const x = (lambda ** 2n - Px - Qx) % params.p;
-  const y = (lambda * (Px - x) - Py) % params.p;
+  const lambda = (modInverse(Q.x - P.x, params.p) * (Q.y - P.y)) % params.p;
+  const x = (lambda ** 2n - P.x - Q.x) % params.p;
+  const y = (lambda * (P.x - x) - P.y) % params.p;
 
   return {
     x: (x + params.p) % params.p,

@@ -1,10 +1,10 @@
 import { Point } from './elliptic.class';
 import { findPreviousPoint } from './find-previous-points';
-import { findNullPoint } from './find-null-point';
 import { rList } from '../config/r-list';
+import { IPoint } from '../interfaces/point.interface';
 
 export const findPrivateKey = (
-  Q: { x: bigint; y: bigint; }
+  Q: IPoint
 ): void => {
   let previousPoints = [];
 
@@ -18,16 +18,6 @@ export const findPrivateKey = (
         x: Point.fromEllipticPoint(previousPoint).x,
         y: Point.fromEllipticPoint(previousPoint).y
       });
-    }
-  }
-
-  for (let i = 0; i < previousPoints.length; i++) {
-    const point = previousPoints[i];
-    const currentPoint = findNullPoint(point);
-
-    if (currentPoint) {
-      console.log(previousPoints[i]);
-      break;
     }
   }
 };
