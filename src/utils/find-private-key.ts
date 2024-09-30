@@ -24,5 +24,4 @@ export const findPrivateKey = (
       });
     }
   }
-  console.log(previousPoints.length)
 };
