@@ -4,7 +4,7 @@ import { Point } from './elliptic.class';
 export const findPreviousPoint = (
   Q: IPoint,
   R: IPoint
-): Point => {
+): IPoint => {
   const pQ = new Point(Q.x, Q.y);
   const pR = new Point(R.x, R.y);
 
