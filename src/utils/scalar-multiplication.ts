@@ -16,6 +16,7 @@ export const scalarMultiplication = (
       } else {
         Q = pointAddition(Q, R);
       }
+      console.log(Q > R);
     }
     R = pointDoubling(R);
     d >>= 1n;

@@ -1,2 +1,4 @@
 node_modules
 dist
+secp256k1
+secp256k1.cpp
