@@ -1,7 +1,6 @@
 import { scalarMultiplication } from './utils/scalar-multiplication';
 import { addressGenerate } from './utils/address.generate';
 import { privateKeyToWIF } from './utils/private-key-to-wif';
-import { findPrivateKey } from './utils/find-private-key';
 
 const k = 0x000000000000000000000000000000000000000000000000000000000000000An;
 const Q = scalarMultiplication(k);
